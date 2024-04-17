@@ -34,21 +34,29 @@ const TimezoneSlider = () => {
     setSelectedTimezones(updatedTimezones);
   
     console.log('selectedTime:', selectedTime);
-    
-    // Ensure that selectedTime has a valid value before using it
-    if (selectedTime !== undefined && selectedTime !== null) {
+  
+    // Ensure that selectedTime and selectedOption are defined
+    if (selectedTime !== undefined && selectedOption !== undefined) {
       // Calculate converted time for the added timezone
       const selectedTimezone = selectedOption.value;
       console.log('selectedTimezone:', selectedTimezone);
       
-      const convertedTime = moment.utc(selectedTime).tz(selectedTimezone).format('h:mm a');
-  
-      // Update the selectedTimezoneTimes state array with the new converted time
+      const currentTimeUTC = moment.utc();
+      
+      const offsetMinutes = moment.tz(selectedTimezone).utcOffset();
+      
+      const convertedTime = currentTimeUTC.clone().add(offsetMinutes, 'minutes').format('h:mm a');
+      
       setSelectedTimezoneTimes([...selectedTimezoneTimes, convertedTime]);
     } else {
-      console.error('Error: selectedTime is not set.');
+      console.error('Error: selectedTime or selectedOption is not set.');
     }
   };
+  
+  
+  
+  
+  
   
   
 
