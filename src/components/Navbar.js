@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -10,30 +11,11 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <button className="nav-link active" aria-current="page" href="#converter">
-                Converter
+              <button className="nav-link active" aria-current="page" onClick={() => window.location = '#converter'}>
+                Time Converter
               </button>
             </li>
-            <li className="nav-item">
-              <button className="nav-link" href="#time-diff">
-                Time Difference
-              </button>
-            </li>
-            <li className="nav-item">
-              <button className="nav-link" href="#table-view">
-                Table
-              </button>
-            </li>
-            <li className="nav-item">
-              <button className="nav-link" href="#utc">
-                UTC
-              </button>
-            </li>
-            <li className="nav-item">
-              <button className="nav-link" href="#ist">
-                IST
-              </button>
-            </li>
+            
           </ul>
         </div>
       </div>

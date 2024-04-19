@@ -1,18 +1,22 @@
-import React, { useState } from 'react';
+import React from "react";
+import { ReactComponent as Sun } from "./Sun.svg";
+import { ReactComponent as Moon } from "./Moon.svg";
+import "./DarkMode.css";
 
-const DarkModeToggle = ({ onToggle }) => {
-  const [darkMode, setDarkMode] = useState(false);
-
-  const handleClick = () => {
-    setDarkMode(!darkMode);
-    onToggle(!darkMode);
-  };
-
-  return (
-    <button onClick={handleClick}>
-      {darkMode? 'Light Mode' : 'Dark Mode'}
-    </button>
-  );
+const DarkMode = () => {
+    return (
+        <div className='dark_mode'>
+            <input
+                className='dark_mode_input'
+                type='checkbox'
+                id='darkmode-toggle'
+            />
+            <label className='dark_mode_label' for='darkmode-toggle'>
+                <Sun />
+                <Moon />
+            </label>
+        </div>
+    );
 };
 
-export default DarkModeToggle;
+export default DarkMode;

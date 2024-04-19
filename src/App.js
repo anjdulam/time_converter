@@ -7,9 +7,16 @@ import TimezoneSlider from './components/TimezoneSlider';
 import Navbar from './components/Navbar';
 
 const App = () => {
+
+
+
+
   return (
-    <div>
+
+    <div >
       <Navbar />
+
+
       <TimezoneSlider />
     </div>
   );

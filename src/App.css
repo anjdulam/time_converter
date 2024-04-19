@@ -12,9 +12,32 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+ 
 
-.nav-link {
-  appearance: button;
-  background-color: transparent;
-  border: none;
+
+
+
+.selected-timezones ul {
+ 
+  list-style-type: none; /* Removes bullet points */
+  padding: 0; /* Remove default padding */
+  transition: background-color 0.1s ease-in-out; /* Smooth transition for background color changes */
 }
+
+.selected-timezones li {
+  margin-top: 20px;
+  margin-bottom: 10px; /* Adds space between items */
+  background-image: linear-gradient(to right, #bdb7d6, #504f7c);  /* Light grey background */
+  padding: 10px; /* Padding inside each list item */
+  box-shadow: 0 2px 5px rgba(17, 17, 17, 0.1); /* Adds subtle shadow for depth */
+  border-radius: 10px; /* Rounded corners for a softer look */
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease; /* Smooth transitions for shadow and transform */
+  cursor: pointer; /* Changes cursor to pointer to indicate item is interactive */
+}
+
+.selected-timezones li:hover {
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2); /* More prominent shadow on hover */
+  transform: translateY(-2px); /* Slightly raises the item on hover for a "lift" effect */
+}
+
+
